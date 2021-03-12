@@ -5,9 +5,13 @@ import { makeLegoList } from './legos/LegoList.js';
 const navElement = document.querySelector("nav");
 
 navElement.addEventListener("click", (event) => {
-	if (event.target.id === "showBlue") {
-		filterLegos("Blue")
-	} else if (event.target.id === "showAll") {
+	if (event.target.id === "showRed") {
+		filterLegos("Red")
+	} 
+	if (event.target.id === "showGreen") {
+		filterLegos("Green")
+	}
+	else if (event.target.id === "showAll") {
 		makeLegoList(useLegos())
 	}
 })
