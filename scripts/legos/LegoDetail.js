@@ -1,11 +1,12 @@
 import { invertColor } from './../helpers.js';
-import { upper } from './../helpers.js';
 export const LegoDetail = (brick) => {
 
   let block = `<section class="block-wrapper" style="background-color:#${brick.ColorHex}">
-              <h3>Name: ${brick.LegoName}</h3>
+              <h3>Name: ${brick.LegoName.toUpperCase()}</h3>
               <h4>Notes: ${brick.Notes}</h4>
+              <p>Materials: ${brick.Material}</p>
               <div class="block-years">Manufactured ${brick.YearFrom} - ${brick.YearTo}</div>
+              </section>
               `;
   const link = brick.ColorstreamLinkImage;
   if (link) {

@@ -2,7 +2,7 @@
 // Invert the R, G and B components
 // Convert each component back to HEX
 // Pad each component with zeros and output.
-export const upper = (LegoName) => {
+export const upper = () => {
 const upper = LegoName;
 LegoName.toUpperCase();
 }
