@@ -16,6 +16,15 @@ navElement.addEventListener("click", (event) => {
 	}
 })
 
+navElement.addEventListener("change", (event) => {
+	const material = document.querySelector("#materialSelect").value;
+	if (material === "NONE") {
+		makeLegoList(useLegos())
+	} 
+	else {
+		legosByMaterial(document.querySelector("#materialSelect").value)
+	}
+})
 const filterLegos = (whatFilter) => {
 	const filterArray = useLegos().filter(singleLego => {
 		if (singleLego.LegoName.includes(whatFilter)) {
@@ -23,6 +32,15 @@ const filterLegos = (whatFilter) => {
 		}
 	})
 	makeLegoList(filterArray);
+}
+
+const legosByMaterial = (whatMaterial) => {
+	const materialArray = use().filter(singleLego => {
+		if (singleLego.Material === whatMaterial) {
+			return singleLego;
+		}
+	})
+	makeLegoList(materialArray);
 }
 
 
